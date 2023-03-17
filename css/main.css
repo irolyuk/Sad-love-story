@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --gutter: 30px;
+  --side-small: 26;
+  --side-big: 36;
+  --depth: 5690px;
+  --transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+
+@font-face {
+  font-family: ralevay_c;
+  src: url(../fonts/raleway-v22-cyrillic-300.woff2);
+  font-weight: 300;
+}
+@font-face {
+  font-family: ralevay_c;
+  src: url(../fonts/raleway-v22-cyrillic-100.woff2);
+  font-weight: 100;
+}
+body {
+  background-color: #000;
+  color: #fff;
+  font-size: calc(var(--index) * 0.8);
+  font-family: raleway_c, sans-serif;
+  line-height: 1.75;
+  height: var(--depth);
+  font-weight: 300;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  perspective: 1500px;
+}
+.gallery {
+  transform-style: preserve-3d;
+  height: 100%;
+}
+.frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition), opacity 0.75s ease;
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 100;
+  text-transform: uppercase;
+}
+.frame h2 {
+  text-align: center;
+  font-size: calc(var(--index) * 3.5);
+  width: min-content;
+  line-height: 1;
+}
+.frame__media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
+}
+.frame-media-left {
+  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame-media-right {
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+.frame_bg {
+  background-color: rgb(0 0 0 / 0.88);
+}
+
+.text-left > * {
+  position: relative;
+  right: 25vw;
+  line-height: 1;
+}
+.text-right > * {
+  position: relative;
+  left: 25vw;
+  line-height: 1;
+}
+
+.frame h3 {
+  font-size: calc(var(--index) * 2.5);
+}
+.frame p {
+  max-width: 50vw;
+  margin-top: 5vh;
+  font-size: calc(var(--index) * 1.2);
+}
+.soundbutton {
+  position: fixed;
+  bottom: 5vh;
+  right: 5vh;
+  cursor: pointer;
+  width: 24px;
+  transition: 0.25s ease;
+}
+.soundbutton.paused {
+  opacity: 0.25;
+}
