@@ -112,7 +112,7 @@ h4 {
   transition: 0.25s ease;
 }
 .soundbutton.paused {
-  opacity: 0.25;
+  opacity: 0.5;
 }
 
 .link {
