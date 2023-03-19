@@ -114,3 +114,12 @@ h4 {
 .soundbutton.paused {
   opacity: 0.25;
 }
+
+.link {
+  position: fixed;
+  cursor: pointer;
+  opacity: 75%;
+}
+.link-icon {
+  width: 30px;
+}
