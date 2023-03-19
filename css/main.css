@@ -123,3 +123,11 @@ h4 {
 .link-icon {
   width: 30px;
 }
+.track-name {
+  position: fixed;
+  opacity: 50%;
+  bottom: 5vh;
+  right: 9vh;
+  font-size: 50%;
+  color: #fff;
+}
